@@ -6,7 +6,7 @@ WIDTH, HEIGHT = 700, 300
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
-MUSIC_FOLDER = os.path.join("music", "sample_tracks")
+MUSIC_FOLDER = os.path.join(os.path.dirname(__file__), "music", "sample_tracks")
 
 def run_player():
     pygame.init()
@@ -18,11 +18,11 @@ def run_player():
     font = pygame.font.SysFont("Arial", 24)
     clock = pygame.time.Clock()
 
-    # Load playlist
     playlist = []
+
     if os.path.exists(MUSIC_FOLDER):
         for file in os.listdir(MUSIC_FOLDER):
-            if file.endswith(".mp3") or file.endswith(".wav"):
+            if file.lower().endswith(".mp3") or file.lower().endswith(".wav"):
                 playlist.append(os.path.join(MUSIC_FOLDER, file))
 
     playlist.sort()
@@ -75,7 +75,6 @@ def run_player():
             status = "Playing" if playing else "Stopped"
             status_text = font.render(f"Status: {status}", True, BLACK)
             screen.blit(status_text, (20, 100))
-
         else:
             text = font.render("No music files found", True, BLACK)
             screen.blit(text, (20, 50))
