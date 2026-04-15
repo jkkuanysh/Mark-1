@@ -2,6 +2,7 @@ import pygame
 import datetime
 import math
 import sys
+import os
 
 WIDTH, HEIGHT = 600, 600
 CENTER = (WIDTH // 2, HEIGHT // 2)
@@ -13,6 +14,13 @@ def run_clock():
 
     clock = pygame.time.Clock()
 
+
+
+    # Загружаем фон
+    background_path = os.path.join("images", "background.png")
+    background = pygame.image.load(background_path)
+    background = pygame.transform.scale(background, (WIDTH, HEIGHT))
+
     running = True
     while running:
         clock.tick(60)
@@ -21,12 +29,15 @@ def run_clock():
             if event.type == pygame.QUIT:
                 running = False
 
-        screen.fill((255, 255, 255))
+        # Рисуем фон
+        screen.blit(background, (0, 0))
 
+        # Берем текущее время
         now = datetime.datetime.now()
         minute = now.minute
         second = now.second
 
+        # Переводим время в угол
         minute_angle = minute * 6
         second_angle = second * 6
 
@@ -36,11 +47,13 @@ def run_clock():
             y = CENTER[1] + math.sin(rad) * length
             pygame.draw.line(screen, color, CENTER, (x, y), width)
 
-        # Draw hands
-        draw_hand(minute_angle, 150, (0, 0, 255), 8)   # blue = minute
-        draw_hand(second_angle, 180, (255, 0, 0), 5)   # red = second
+        # Правая рука = минуты
+        draw_hand(minute_angle, 150, (0, 0, 255), 8)
 
-        # Center dot
+        # Левая рука = секунды
+        draw_hand(second_angle, 180, (255, 0, 0), 5)
+
+        # Точка в центре
         pygame.draw.circle(screen, (0, 0, 0), CENTER, 8)
 
         pygame.display.flip()
