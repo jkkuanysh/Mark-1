@@ -1,0 +1,5 @@
+name,email,birthday,group_name,phone,phone_type
+Alice,alice@gmail.com,2004-05-10,Friend,+77015550001,mobile
+Alice,alice.work@gmail.com,2004-05-10,Friend,+77015550002,work
+Bob,bob@company.com,2001-09-21,Work,+77017778899,work
+Carol,carol@yahoo.com,2003-12-02,Family,+77012223344,home

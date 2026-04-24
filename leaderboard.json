@@ -1,0 +1,32 @@
+[
+    {
+        "name": "vfs",
+        "score": 2102,
+        "distance": 1772
+    },
+    {
+        "name": "bsdf",
+        "score": 1347,
+        "distance": 1287
+    },
+    {
+        "name": "hdgtrsf",
+        "score": 749,
+        "distance": 739
+    },
+    {
+        "name": "yngdf",
+        "score": 498,
+        "distance": 468
+    },
+    {
+        "name": "DCS",
+        "score": 429,
+        "distance": 429
+    },
+    {
+        "name": "dfz",
+        "score": 248,
+        "distance": 238
+    }
+]
