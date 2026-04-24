@@ -1,12 +1,6 @@
-"""
-Database connection helper.
-"""
-
 import psycopg2
-from config import load_config
+from config import DB_CONFIG
 
 
-def connect():
-    """Create and return a PostgreSQL connection."""
-    params = load_config()
-    return psycopg2.connect(**params)
+def get_connection():
+    return psycopg2.connect(**DB_CONFIG)
