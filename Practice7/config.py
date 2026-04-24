@@ -8,5 +8,5 @@ DB_CONFIG = {
     "port": 5432,
     "dbname": "phonebook_db",
     "user": "postgres",
-    "password": "your_password_here",
+    "password": "12345678",
 }

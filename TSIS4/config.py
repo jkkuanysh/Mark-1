@@ -8,6 +8,6 @@ def load_config():
         "host": "localhost",
         "dbname": "postgres",
         "user": "postgres",
-        "password": "your_password_here",
+        "password": "12345678",
         "port": 5432,
     }
